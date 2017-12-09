@@ -1,0 +1,123 @@
+﻿@model NatureSpiritMVC.Models.NewsModels
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(function(){
+        $("#commentId").hide().text("");
+        $("#setCommentId").click(function(){
+            $("#commentId").show().text("");
+        });
+        
+        //showCommentField();
+    });
+    
+</script>
+
+<h2>Details</h2>
+
+<div>
+    <h4>NewsModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+         Id News :
+        </dt>*@
+        <dd>
+            @Html.HiddenFor(model => model.idNews)
+        </dd>
+        <dt>
+            Title News :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            Description News :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            News In Picture :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.picture)
+        </dd>    
+
+        <dt>
+            Numbre Likes Of News :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.like)
+        </dd>
+
+        <dt>
+            Last Comment Of News :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+        <dt>
+            Title Topic :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topic.title)
+        </dd>
+
+        <dt>
+            Description Topic :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topic.description)
+        </dd> 
+        @*<dt>
+            @Html.DisplayNameFor(model => model.admin_id_Member)
+        </dt>*@
+
+        <dd>
+            @Html.HiddenFor(model => model.admin_id_Member)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.topic_idTopic)
+        </dt>*@
+
+        <dd>
+            @Html.HiddenFor(model => model.topic_idTopic)
+            
+        </dd>
+
+    </dl>
+</div>
+<div>
+<form method="post" action="@Url.Action("CommentNewsByMember","MemberNews")" > 
+ 
+    <input type="text" placeholder="Type Your Comment Here" name="commentValue" id="commentId" />
+   @* @Html.TextBox("commentValue"); *@
+    <input type="submit" name="setComment" id="setCommentId" value="Add Comment" class="btn btn-default" onclick="showCommentField()"/>
+</form>
+</div>
+<div>      
+@using (Html.BeginForm("LikeNewsByMember", "MemberNews", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{  
+    <input type="submit" name="setComment" id="setComment" value="Like The News" class="btn btn-default" />
+}
+</div>
+
+<p>
+  @*  @Html.ActionLink("Edit", "Edit", new { id = Model.idNews }) *@  
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script type="text/javascript" src="http://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            var dataPts = [];
+            $.getJSON("/chartnewsmember/newsmemberchart/getdata", function (data) {
+                for (var i = 0; i <= data.length - 1; i++) {
+                    dataPts.push({ label: data[i].title, y: parseInt(data[i].Credits) });
+                }
+                var chart = new CanvasJS.Chart("chartContainer", {
+                   // animationEnabled: true,
+                    theme: "theme2",//theme1
+                    title: {
+                        text: "walid"
+                    },
+                    data: [
+                    {
+                        // Change type to "bar", "splineArea", "area", "spline", "pie","column",etc.
+                        type: "column",
+                        dataPoints: dataPts
+                    }
+                    ]
+                });
+
+                chart.render();
+            });
+
+        });
+</script>
+</head>
+<body>
+    <h2>Get Data Index</h2>
+
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,47 @@
+﻿@model NatureSpiritMVC.Models.NewsModels
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_BackOfficeTemplate.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NewsModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+         Id News :
+        </dt>*@
+        <dd>
+            @Html.HiddenFor(model => model.idNews)
+        </dd>
+        <dt>
+           Title Topic :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topic.title)
+        </dd>
+
+        <dt>
+           Description Topic :    
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topic.description)
+        </dd> 
+        @*@<dt>
+            Id Topic :
+        </dt>*@
+            
+        <dd>
+            @Html.HiddenFor(model => model.topic.idTopic)   
+        </dd> 
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idNews }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

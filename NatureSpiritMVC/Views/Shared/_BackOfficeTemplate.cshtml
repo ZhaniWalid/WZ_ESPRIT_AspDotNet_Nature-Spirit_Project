@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- BOOTSTRAP STYLES--> 
+    <link href="@Url.Content("~/Content/BackOfficeTemplate/")assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="@Url.Content("~/Content/BackOfficeTemplate/")assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- MORRIS CHART STYLES-->
+    <link href="@Url.Content("~/Content/BackOfficeTemplate/")assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="@Url.Content("~/Content/BackOfficeTemplate/")assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='@Url.Content("~/Content/BackOfficeTemplate/")http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <!-- Css My Div into the Centre Of The Body !-->
+
+    <style type="text/css">
+        #outer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #inner {
+            width: 80%;
+            height: 100%;
+            top:10%;
+            left:10%;
+            bottom:15%;
+            margin: 0 auto;
+            position: relative;
+            overflow-x:scroll;
+            overflow-y:scroll;
+            @*background: orange;*@
+        }
+
+       /* Css for table */
+
+        th {
+          border: medium solid #000000;
+          font-family: monospace;
+          width: 1%;
+          height: 10%;
+          padding: 5px;
+          background-color: #D0E3FA;
+         }
+       td {
+
+         width: 1%;
+         border: medium solid #000000;
+         height: 10%;
+       }
+       #t {
+         border: medium solid #000000;
+         width: auto;
+         height: 50%;
+      }
+    </style> 
+
+    <!-- /. Css My Div into the Centre Of The Body !-->
+
+    
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Admin</a>
+            </div>
+            <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;"><a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a></div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center">
+                        <img src="@Url.Content("~/Content/BackOfficeTemplate/")assets/img/find_user.png" class="user-image img-responsive" />
+                    </li> 
+                    <li>
+                        @Html.ActionLink("Dashboard", "IndexAdmin", "Home")
+                       </li>
+                    <li>
+                        @Html.ActionLink("Manage Products", "ProductsAdmin", "Home")
+                    </li>  
+                    <li>
+                        <a href="ManageSeaMission.html"><i class="fa fa-qrcode fa-3x"></i>  Manage Sea Mission  </a>
+                    </li>
+                    <li>
+                        <a href="ManageEvents.html"><i class="fa fa-bar-chart-o fa-3x"></i>  Manage Events  </a>
+                    </li>  
+                    <li>
+                        <a href="ManageAlertAndReclamation.html"><i class="fa fa-table fa-3x"></i>  Manage Alert And Reclamation  </a>
+                    </li>
+                    <li>
+                       @* @Html.ActionLink("Manage News And Topics", "NewsAdmin", "Home") *@
+                        @Html.ActionLink("Manage News And Topics", "Index", "MyAdminNews")
+                    </li>
+                    <li>
+                        <a href="ManagePhotographyCompetition.html"><i class="fa fa-bolt fa-3x"></i>  Manage Photgraphy Competition  </a>
+
+                        <!-- <li>
+                            <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Second Level Link</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Link</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Third Level Link</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Link</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Link</a>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+                            </ul>
+                          </li> !-->
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+
+        <!-- My Div into the Centre Of The Body !-->
+        <div id="outer">
+             <div id="inner">
+               <!--  <h1> Hello </h1> !-->
+                 @RenderBody()
+             </div>
+        </div>
+        <!--  /. My Div into the Centre Of The Body !-->
+
+       @Scripts.Render("~/bundles/jquery")
+       @Scripts.Render("~/bundles/bootstrap") 
+       @RenderSection("scripts", required: false) 
+</body>
+</html>

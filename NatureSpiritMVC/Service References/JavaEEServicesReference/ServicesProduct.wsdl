@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ServicesProduct.com" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ServicesProduct" targetNamespace="http://ServicesProduct.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ServicesProduct.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="AdminAddListProductToSellForDonation" type="tns:AdminAddListProductToSellForDonation" />
+      <xs:element name="AdminAddListProductToSellForDonationResponse" type="tns:AdminAddListProductToSellForDonationResponse" />
+      <xs:element name="AdminAddSingleProductToSellForDonation" type="tns:AdminAddSingleProductToSellForDonation" />
+      <xs:element name="AdminAddSingleProductToSellForDonationResponse" type="tns:AdminAddSingleProductToSellForDonationResponse" />
+      <xs:element name="AdminDeleteProd" type="tns:AdminDeleteProd" />
+      <xs:element name="AdminDeleteProdResponse" type="tns:AdminDeleteProdResponse" />
+      <xs:element name="AdminDeleteProductFromSellForDonation" type="tns:AdminDeleteProductFromSellForDonation" />
+      <xs:element name="AdminDeleteProductFromSellForDonationResponse" type="tns:AdminDeleteProductFromSellForDonationResponse" />
+      <xs:element name="AdminDeleteRelatedProduct" type="tns:AdminDeleteRelatedProduct" />
+      <xs:element name="AdminDeleteRelatedProductResponse" type="tns:AdminDeleteRelatedProductResponse" />
+      <xs:element name="AdminUpdateProductToSellForDonation" type="tns:AdminUpdateProductToSellForDonation" />
+      <xs:element name="AdminUpdateProductToSellForDonationResponse" type="tns:AdminUpdateProductToSellForDonationResponse" />
+      <xs:element name="MemberAddListProductToBuyForDonation" type="tns:MemberAddListProductToBuyForDonation" />
+      <xs:element name="MemberAddListProductToBuyForDonationResponse" type="tns:MemberAddListProductToBuyForDonationResponse" />
+      <xs:element name="MemberAddSingleProductToBuyForDonation" type="tns:MemberAddSingleProductToBuyForDonation" />
+      <xs:element name="MemberAddSingleProductToBuyForDonationResponse" type="tns:MemberAddSingleProductToBuyForDonationResponse" />
+      <xs:element name="MemberDeleteProductFromBuyForDonation" type="tns:MemberDeleteProductFromBuyForDonation" />
+      <xs:element name="MemberDeleteProductFromBuyForDonationResponse" type="tns:MemberDeleteProductFromBuyForDonationResponse" />
+      <xs:element name="MemberUpdateProductToBuyForDonation" type="tns:MemberUpdateProductToBuyForDonation" />
+      <xs:element name="MemberUpdateProductToBuyForDonationResponse" type="tns:MemberUpdateProductToBuyForDonationResponse" />
+      <xs:element name="OrphanalProductAdminRemove" type="tns:OrphanalProductAdminRemove" />
+      <xs:element name="OrphanalProductAdminRemoveResponse" type="tns:OrphanalProductAdminRemoveResponse" />
+      <xs:element name="ParentChildRemoveProd" type="tns:ParentChildRemoveProd" />
+      <xs:element name="ParentChildRemoveProdResponse" type="tns:ParentChildRemoveProdResponse" />
+      <xs:element name="ShowAllProductsToBuyForDonationAddedByMember" type="tns:ShowAllProductsToBuyForDonationAddedByMember" />
+      <xs:element name="ShowAllProductsToBuyForDonationAddedByMemberResponse" type="tns:ShowAllProductsToBuyForDonationAddedByMemberResponse" />
+      <xs:element name="ShowAllProductsToSellForDonation" type="tns:ShowAllProductsToSellForDonation" />
+      <xs:element name="ShowAllProductsToSellForDonationResponse" type="tns:ShowAllProductsToSellForDonationResponse" />
+      <xs:element name="addProduct" type="tns:addProduct" />
+      <xs:element name="addProductResponse" type="tns:addProductResponse" />
+      <xs:element name="deleteProduct" type="tns:deleteProduct" />
+      <xs:element name="deleteProductResponse" type="tns:deleteProductResponse" />
+      <xs:element name="findAllAdminProducts" type="tns:findAllAdminProducts" />
+      <xs:element name="findAllAdminProducts2" type="tns:findAllAdminProducts2" />
+      <xs:element name="findAllAdminProducts2Response" type="tns:findAllAdminProducts2Response" />
+      <xs:element name="findAllAdminProductsResponse" type="tns:findAllAdminProductsResponse" />
+      <xs:element name="findAllProductsByAdmin" type="tns:findAllProductsByAdmin" />
+      <xs:element name="findAllProductsByAdminResponse" type="tns:findAllProductsByAdminResponse" />
+      <xs:element name="findProductById" type="tns:findProductById" />
+      <xs:element name="findProductByIdResponse" type="tns:findProductByIdResponse" />
+      <xs:element name="getAllProductsForDotNet" type="tns:getAllProductsForDotNet" />
+      <xs:element name="getAllProductsForDotNetResponse" type="tns:getAllProductsForDotNetResponse" />
+      <xs:element name="removeProduct" type="tns:removeProduct" />
+      <xs:element name="removeProductResponse" type="tns:removeProductResponse" />
+      <xs:element name="updateProduct" type="tns:updateProduct" />
+      <xs:element name="updateProductResponse" type="tns:updateProductResponse" />
+      <xs:complexType name="findAllAdminProducts2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="admin" type="tns:admin" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="admin">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="alerts" nillable="true" type="tns:alert" />
+          <xs:element minOccurs="0" name="date_Birth" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="events" nillable="true" type="tns:event" />
+          <xs:element minOccurs="0" name="first_Name" type="xs:string" />
+          <xs:element minOccurs="0" name="id_Admin" type="xs:int" />
+          <xs:element minOccurs="0" name="last_Name" type="xs:string" />
+          <xs:element minOccurs="0" name="login" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="members" nillable="true" type="tns:member" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="photography_competitions" nillable="true" type="tns:photographyCompetition" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="products" nillable="true" type="tns:product" />
+          <xs:element minOccurs="0" name="profile_Picture" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="reclamations" nillable="true" type="tns:reclamation" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="sea_missions" nillable="true" type="tns:seaMission" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="alert">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="admin" type="tns:admin" />
+          <xs:element minOccurs="0" name="alert_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="alert_Description" type="xs:string" />
+          <xs:element minOccurs="0" name="alert_Location" type="xs:string" />
+          <xs:element minOccurs="0" name="alert_Subject" type="xs:string" />
+          <xs:element minOccurs="0" name="id_Alert" type="xs:int" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="member">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="accounts" nillable="true" type="tns:account" />
+          <xs:element minOccurs="0" name="admin" type="tns:admin" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="agendas" nillable="true" type="tns:agenda" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="alerts" nillable="true" type="tns:alert" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="articles" nillable="true" type="tns:article" />
+          <xs:element minOccurs="0" name="balance" type="xs:float" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="comments" nillable="true" type="tns:comment" />
+          <xs:element minOccurs="0" name="date_Birth" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="details" nillable="true" type="tns:details" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="donationTheories" nillable="true" type="tns:donationTheory" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="donations" nillable="true" type="tns:donationTheory" />
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" name="first_Name" type="xs:string" />
+          <xs:element minOccurs="0" name="id_Member" type="xs:int" />
+          <xs:element minOccurs="0" name="last_Name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="mission_sailors" nillable="true" type="tns:missionSailor" />
+          <xs:element minOccurs="0" name="newsletter" type="tns:newsletter" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="photoCompetition_journalists" nillable="true" type="tns:photographyCompetition" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="photoCompetitions" nillable="true" type="tns:photographyCompetition" />
+          <xs:element minOccurs="0" name="profil_Picture" type="xs:string" />
+          <xs:element minOccurs="0" name="reclamationMember" type="tns:reclamationMember" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="reclamations" nillable="true" type="tns:reclamation" />
+          <xs:element minOccurs="0" name="role" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="account">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="credit" type="xs:double" />
+          <xs:element minOccurs="0" name="id_Account" type="xs:int" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+          <xs:element name="rib_Number" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agenda">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agendaId" type="tns:agendaId" />
+          <xs:element minOccurs="0" name="event" type="tns:event" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agendaId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="date_Event" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id_Event" type="xs:int" />
+          <xs:element minOccurs="0" name="id_Member" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="admin" type="tns:admin" />
+          <xs:element minOccurs="0" name="date_Event" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="description_Event" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="donations" nillable="true" type="tns:donation" />
+          <xs:element minOccurs="0" name="id_Event" type="xs:int" />
+          <xs:element minOccurs="0" name="location_Event" type="xs:string" />
+          <xs:element minOccurs="0" name="nameEvent" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="participations" nillable="true" type="tns:participation" />
+          <xs:element minOccurs="0" name="typeEvent" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="donation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:float" />
+          <xs:element minOccurs="0" name="dateOfDonation" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="donationId" type="tns:donationId" />
+          <xs:element minOccurs="0" name="event" type="tns:event" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="donationId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idEvent" type="xs:int" />
+          <xs:element minOccurs="0" name="idMember" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="participation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="evaluation" type="xs:int" />
+          <xs:element minOccurs="0" name="event" type="tns:event" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+          <xs:element minOccurs="0" name="opinions" type="xs:string" />
+          <xs:element minOccurs="0" name="participationId" type="tns:participationId" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="participationId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="date_Event" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id_Event" type="xs:int" />
+          <xs:element minOccurs="0" name="id_Member" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="article">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="comments" nillable="true" type="tns:comment" />
+          <xs:element minOccurs="0" name="id_Article" type="xs:int" />
+          <xs:element minOccurs="0" name="image" type="xs:string" />
+          <xs:element minOccurs="0" name="journalist" type="tns:member" />
+          <xs:element minOccurs="0" name="subject" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="comment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="article" type="tns:article" />
+          <xs:element minOccurs="0" name="comment" type="xs:string" />
+          <xs:element minOccurs="0" name="commentId" type="tns:commentId" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+          <xs:element minOccurs="0" name="number_Of_Comment" type="xs:int" />
+          <xs:element minOccurs="0" name="number_Of_Shares" type="xs:int" />
+          <xs:element minOccurs="0" name="reclamationComment" type="tns:reclamationComment" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="commentId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="date_Of_Comment" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id_Article" type="xs:int" />
+          <xs:element minOccurs="0" name="id_Member" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reclamationComment">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:reclamation">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="comment" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="comments" nillable="true" type="tns:comment" />
+              <xs:element minOccurs="0" name="idReclamationComment" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="reclamation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="admin" type="tns:admin" />
+          <xs:element minOccurs="0" name="date_Reclamation" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="description_Reclamation" type="xs:string" />
+          <xs:element minOccurs="0" name="id_Reclamation" type="xs:int" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+          <xs:element minOccurs="0" name="subject_Reclamation" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="details">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="detailsId" type="tns:detailsId" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+          <xs:element minOccurs="0" name="product" type="tns:product" />
+          <xs:element minOccurs="0" name="quantity" type="xs:int" />
+          <xs:element minOccurs="0" name="state" type="xs:boolean" />
+          <xs:element minOccurs="0" name="total_amount" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="detailsId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="date_Of_Purchase" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id_Member" type="xs:int" />
+          <xs:element minOccurs="0" name="id_Product" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="product">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="admin" type="tns:admin" />
+          <xs:element name="availability" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="details" nillable="true" type="tns:details" />
+          <xs:element minOccurs="0" name="id_Product" type="xs:int" />
+          <xs:element minOccurs="0" name="price" type="xs:double" />
+          <xs:element minOccurs="0" name="type_Product" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="donationTheory">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount_of_money" type="xs:double" />
+          <xs:element minOccurs="0" name="date_of_transfert" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id_Donation_Theory" type="xs:int" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="missionSailor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="mission_SailorId" type="tns:missionSailorId" />
+          <xs:element minOccurs="0" name="sailor" type="tns:member" />
+          <xs:element minOccurs="0" name="sea_Mission" type="tns:seaMission" />
+          <xs:element minOccurs="0" name="state" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="missionSailorId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="end_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id_Member" type="xs:int" />
+          <xs:element minOccurs="0" name="id_SeaMission" type="xs:int" />
+          <xs:element minOccurs="0" name="start_Date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="seaMission">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="admin" type="tns:admin" />
+          <xs:element minOccurs="0" name="destination" type="xs:string" />
+          <xs:element minOccurs="0" name="goal" type="xs:string" />
+          <xs:element minOccurs="0" name="id_SeaMission" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="mission_sailors" nillable="true" type="tns:missionSailor" />
+          <xs:element name="ship_Number" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="newsletter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id_Newsletter" type="xs:int" />
+          <xs:element minOccurs="0" name="news_Contents" type="xs:string" />
+          <xs:element minOccurs="0" name="news_Subject" type="xs:string" />
+          <xs:element name="user_Registration_Number" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="photographyCompetition">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="admin" type="tns:admin" />
+          <xs:element minOccurs="0" name="date_Of_Capture" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="description" type="xs:string" />
+          <xs:element minOccurs="0" name="id_PhotoCompetition" type="xs:int" />
+          <xs:element minOccurs="0" name="journalist" type="tns:member" />
+          <xs:element minOccurs="0" name="member" type="tns:member" />
+          <xs:element minOccurs="0" name="picture" type="xs:string" />
+          <xs:element minOccurs="0" name="reclamationPicture" type="tns:reclamationPicture" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reclamationPicture">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:reclamation">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="idReclamationPicture" type="xs:int" />
+              <xs:element minOccurs="0" name="picture" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="reclamationMember">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:reclamation">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="first_Name" type="xs:string" />
+              <xs:element minOccurs="0" name="idReclamtionMember" type="xs:int" />
+              <xs:element minOccurs="0" name="last_Name" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="members" nillable="true" type="tns:member" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="findAllAdminProducts2Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultDisplayAdminAllProducts" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberUpdateProductToBuyForDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberUpdateProductToBuyForDonationResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="deleteProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteProductResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="AdminUpdateProductToSellForDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminUpdateProductToSellForDonationResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="MemberAddListProductToBuyForDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberAddListProductToBuyForDonationResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="findAllProductsByAdmin">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="findAllProductsByAdminResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminDeleteProd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:int" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminDeleteProdResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="ParentChildRemoveProd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+          <xs:element minOccurs="0" name="arg1" type="tns:admin" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParentChildRemoveProdResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="AdminAddListProductToSellForDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminAddListProductToSellForDonationResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="AdminAddSingleProductToSellForDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="product" type="tns:product" />
+          <xs:element minOccurs="0" name="id_admin" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminAddSingleProductToSellForDonationResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="ShowAllProductsToSellForDonation">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="ShowAllProductsToSellForDonationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminDeleteProductFromSellForDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminDeleteProductFromSellForDonationResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="MemberDeleteProductFromBuyForDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberDeleteProductFromBuyForDonationResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="OrphanalProductAdminRemove">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrphanalProductAdminRemoveResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="ShowAllProductsToBuyForDonationAddedByMember">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ShowAllProductsToBuyForDonationAddedByMemberResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findAllAdminProducts">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:admin" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findAllAdminProductsResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="addProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addProductResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="updateProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:double" />
+          <xs:element name="arg2" type="xs:int" />
+          <xs:element minOccurs="0" name="arg3" type="tns:product" />
+          <xs:element minOccurs="0" name="arg4" type="tns:admin" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateProductResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="removeProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="removeProductResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getAllProductsForDotNet">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getAllProductsForDotNetResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultDisplayAllProductsForDotNet" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminDeleteRelatedProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:int" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdminDeleteRelatedProductResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="MemberAddSingleProductToBuyForDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:product" />
+          <xs:element minOccurs="0" name="arg1" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberAddSingleProductToBuyForDonationResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="findProductById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findProductByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FindProductById" type="tns:product" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ShowAllProductsToBuyForDonationAddedByMemberResponse">
+    <wsdl:part name="parameters" element="tns:ShowAllProductsToBuyForDonationAddedByMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteProduct">
+    <wsdl:part name="parameters" element="tns:deleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="updateProductResponse">
+    <wsdl:part name="parameters" element="tns:updateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberAddSingleProductToBuyForDonationResponse">
+    <wsdl:part name="parameters" element="tns:MemberAddSingleProductToBuyForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminAddSingleProductToSellForDonationResponse">
+    <wsdl:part name="parameters" element="tns:AdminAddSingleProductToSellForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminAddListProductToSellForDonationResponse">
+    <wsdl:part name="parameters" element="tns:AdminAddListProductToSellForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminAddListProductToSellForDonation">
+    <wsdl:part name="parameters" element="tns:AdminAddListProductToSellForDonation" />
+  </wsdl:message>
+  <wsdl:message name="addProductResponse">
+    <wsdl:part name="parameters" element="tns:addProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeProductResponse">
+    <wsdl:part name="parameters" element="tns:removeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminDeleteProdResponse">
+    <wsdl:part name="parameters" element="tns:AdminDeleteProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminAddSingleProductToSellForDonation">
+    <wsdl:part name="parameters" element="tns:AdminAddSingleProductToSellForDonation" />
+  </wsdl:message>
+  <wsdl:message name="addProduct">
+    <wsdl:part name="parameters" element="tns:addProduct" />
+  </wsdl:message>
+  <wsdl:message name="updateProduct">
+    <wsdl:part name="parameters" element="tns:updateProduct" />
+  </wsdl:message>
+  <wsdl:message name="removeProduct">
+    <wsdl:part name="parameters" element="tns:removeProduct" />
+  </wsdl:message>
+  <wsdl:message name="AdminUpdateProductToSellForDonationResponse">
+    <wsdl:part name="parameters" element="tns:AdminUpdateProductToSellForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductsForDotNet">
+    <wsdl:part name="parameters" element="tns:getAllProductsForDotNet" />
+  </wsdl:message>
+  <wsdl:message name="AdminDeleteRelatedProduct">
+    <wsdl:part name="parameters" element="tns:AdminDeleteRelatedProduct" />
+  </wsdl:message>
+  <wsdl:message name="findAllAdminProducts2">
+    <wsdl:part name="parameters" element="tns:findAllAdminProducts2" />
+  </wsdl:message>
+  <wsdl:message name="MemberUpdateProductToBuyForDonation">
+    <wsdl:part name="parameters" element="tns:MemberUpdateProductToBuyForDonation" />
+  </wsdl:message>
+  <wsdl:message name="findProductByIdResponse">
+    <wsdl:part name="parameters" element="tns:findProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminUpdateProductToSellForDonation">
+    <wsdl:part name="parameters" element="tns:AdminUpdateProductToSellForDonation" />
+  </wsdl:message>
+  <wsdl:message name="MemberAddListProductToBuyForDonation">
+    <wsdl:part name="parameters" element="tns:MemberAddListProductToBuyForDonation" />
+  </wsdl:message>
+  <wsdl:message name="findAllProductsByAdmin">
+    <wsdl:part name="parameters" element="tns:findAllProductsByAdmin" />
+  </wsdl:message>
+  <wsdl:message name="MemberUpdateProductToBuyForDonationResponse">
+    <wsdl:part name="parameters" element="tns:MemberUpdateProductToBuyForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminDeleteProd">
+    <wsdl:part name="parameters" element="tns:AdminDeleteProd" />
+  </wsdl:message>
+  <wsdl:message name="deleteProductResponse">
+    <wsdl:part name="parameters" element="tns:deleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrphanalProductAdminRemoveResponse">
+    <wsdl:part name="parameters" element="tns:OrphanalProductAdminRemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberDeleteProductFromBuyForDonationResponse">
+    <wsdl:part name="parameters" element="tns:MemberDeleteProductFromBuyForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberAddListProductToBuyForDonationResponse">
+    <wsdl:part name="parameters" element="tns:MemberAddListProductToBuyForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParentChildRemoveProd">
+    <wsdl:part name="parameters" element="tns:ParentChildRemoveProd" />
+  </wsdl:message>
+  <wsdl:message name="findAllAdminProducts2Response">
+    <wsdl:part name="parameters" element="tns:findAllAdminProducts2Response" />
+  </wsdl:message>
+  <wsdl:message name="ParentChildRemoveProdResponse">
+    <wsdl:part name="parameters" element="tns:ParentChildRemoveProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShowAllProductsToSellForDonationResponse">
+    <wsdl:part name="parameters" element="tns:ShowAllProductsToSellForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminDeleteRelatedProductResponse">
+    <wsdl:part name="parameters" element="tns:AdminDeleteRelatedProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShowAllProductsToSellForDonation">
+    <wsdl:part name="parameters" element="tns:ShowAllProductsToSellForDonation" />
+  </wsdl:message>
+  <wsdl:message name="AdminDeleteProductFromSellForDonation">
+    <wsdl:part name="parameters" element="tns:AdminDeleteProductFromSellForDonation" />
+  </wsdl:message>
+  <wsdl:message name="MemberDeleteProductFromBuyForDonation">
+    <wsdl:part name="parameters" element="tns:MemberDeleteProductFromBuyForDonation" />
+  </wsdl:message>
+  <wsdl:message name="AdminDeleteProductFromSellForDonationResponse">
+    <wsdl:part name="parameters" element="tns:AdminDeleteProductFromSellForDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllProductsForDotNetResponse">
+    <wsdl:part name="parameters" element="tns:getAllProductsForDotNetResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrphanalProductAdminRemove">
+    <wsdl:part name="parameters" element="tns:OrphanalProductAdminRemove" />
+  </wsdl:message>
+  <wsdl:message name="ShowAllProductsToBuyForDonationAddedByMember">
+    <wsdl:part name="parameters" element="tns:ShowAllProductsToBuyForDonationAddedByMember" />
+  </wsdl:message>
+  <wsdl:message name="findAllAdminProducts">
+    <wsdl:part name="parameters" element="tns:findAllAdminProducts" />
+  </wsdl:message>
+  <wsdl:message name="findAllAdminProductsResponse">
+    <wsdl:part name="parameters" element="tns:findAllAdminProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="findAllProductsByAdminResponse">
+    <wsdl:part name="parameters" element="tns:findAllProductsByAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberAddSingleProductToBuyForDonation">
+    <wsdl:part name="parameters" element="tns:MemberAddSingleProductToBuyForDonation" />
+  </wsdl:message>
+  <wsdl:message name="findProductById">
+    <wsdl:part name="parameters" element="tns:findProductById" />
+  </wsdl:message>
+  <wsdl:portType name="ServicesProductPortType">
+    <wsdl:operation name="findAllAdminProducts2">
+      <wsdl:input name="findAllAdminProducts2" message="tns:findAllAdminProducts2" />
+      <wsdl:output name="findAllAdminProducts2Response" message="tns:findAllAdminProducts2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberUpdateProductToBuyForDonation">
+      <wsdl:input name="MemberUpdateProductToBuyForDonation" message="tns:MemberUpdateProductToBuyForDonation" />
+      <wsdl:output name="MemberUpdateProductToBuyForDonationResponse" message="tns:MemberUpdateProductToBuyForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <wsdl:input name="deleteProduct" message="tns:deleteProduct" />
+      <wsdl:output name="deleteProductResponse" message="tns:deleteProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminUpdateProductToSellForDonation">
+      <wsdl:input name="AdminUpdateProductToSellForDonation" message="tns:AdminUpdateProductToSellForDonation" />
+      <wsdl:output name="AdminUpdateProductToSellForDonationResponse" message="tns:AdminUpdateProductToSellForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberAddListProductToBuyForDonation">
+      <wsdl:input name="MemberAddListProductToBuyForDonation" message="tns:MemberAddListProductToBuyForDonation" />
+      <wsdl:output name="MemberAddListProductToBuyForDonationResponse" message="tns:MemberAddListProductToBuyForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findAllProductsByAdmin">
+      <wsdl:input name="findAllProductsByAdmin" message="tns:findAllProductsByAdmin" />
+      <wsdl:output name="findAllProductsByAdminResponse" message="tns:findAllProductsByAdminResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminDeleteProd">
+      <wsdl:input name="AdminDeleteProd" message="tns:AdminDeleteProd" />
+      <wsdl:output name="AdminDeleteProdResponse" message="tns:AdminDeleteProdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ParentChildRemoveProd">
+      <wsdl:input name="ParentChildRemoveProd" message="tns:ParentChildRemoveProd" />
+      <wsdl:output name="ParentChildRemoveProdResponse" message="tns:ParentChildRemoveProdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminAddListProductToSellForDonation">
+      <wsdl:input name="AdminAddListProductToSellForDonation" message="tns:AdminAddListProductToSellForDonation" />
+      <wsdl:output name="AdminAddListProductToSellForDonationResponse" message="tns:AdminAddListProductToSellForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminAddSingleProductToSellForDonation">
+      <wsdl:input name="AdminAddSingleProductToSellForDonation" message="tns:AdminAddSingleProductToSellForDonation" />
+      <wsdl:output name="AdminAddSingleProductToSellForDonationResponse" message="tns:AdminAddSingleProductToSellForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowAllProductsToSellForDonation">
+      <wsdl:input name="ShowAllProductsToSellForDonation" message="tns:ShowAllProductsToSellForDonation" />
+      <wsdl:output name="ShowAllProductsToSellForDonationResponse" message="tns:ShowAllProductsToSellForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminDeleteProductFromSellForDonation">
+      <wsdl:input name="AdminDeleteProductFromSellForDonation" message="tns:AdminDeleteProductFromSellForDonation" />
+      <wsdl:output name="AdminDeleteProductFromSellForDonationResponse" message="tns:AdminDeleteProductFromSellForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberDeleteProductFromBuyForDonation">
+      <wsdl:input name="MemberDeleteProductFromBuyForDonation" message="tns:MemberDeleteProductFromBuyForDonation" />
+      <wsdl:output name="MemberDeleteProductFromBuyForDonationResponse" message="tns:MemberDeleteProductFromBuyForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="OrphanalProductAdminRemove">
+      <wsdl:input name="OrphanalProductAdminRemove" message="tns:OrphanalProductAdminRemove" />
+      <wsdl:output name="OrphanalProductAdminRemoveResponse" message="tns:OrphanalProductAdminRemoveResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowAllProductsToBuyForDonationAddedByMember">
+      <wsdl:input name="ShowAllProductsToBuyForDonationAddedByMember" message="tns:ShowAllProductsToBuyForDonationAddedByMember" />
+      <wsdl:output name="ShowAllProductsToBuyForDonationAddedByMemberResponse" message="tns:ShowAllProductsToBuyForDonationAddedByMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findAllAdminProducts">
+      <wsdl:input name="findAllAdminProducts" message="tns:findAllAdminProducts" />
+      <wsdl:output name="findAllAdminProductsResponse" message="tns:findAllAdminProductsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addProduct">
+      <wsdl:input name="addProduct" message="tns:addProduct" />
+      <wsdl:output name="addProductResponse" message="tns:addProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <wsdl:input name="updateProduct" message="tns:updateProduct" />
+      <wsdl:output name="updateProductResponse" message="tns:updateProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeProduct">
+      <wsdl:input name="removeProduct" message="tns:removeProduct" />
+      <wsdl:output name="removeProductResponse" message="tns:removeProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductsForDotNet">
+      <wsdl:input name="getAllProductsForDotNet" message="tns:getAllProductsForDotNet" />
+      <wsdl:output name="getAllProductsForDotNetResponse" message="tns:getAllProductsForDotNetResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminDeleteRelatedProduct">
+      <wsdl:input name="AdminDeleteRelatedProduct" message="tns:AdminDeleteRelatedProduct" />
+      <wsdl:output name="AdminDeleteRelatedProductResponse" message="tns:AdminDeleteRelatedProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberAddSingleProductToBuyForDonation">
+      <wsdl:input name="MemberAddSingleProductToBuyForDonation" message="tns:MemberAddSingleProductToBuyForDonation" />
+      <wsdl:output name="MemberAddSingleProductToBuyForDonationResponse" message="tns:MemberAddSingleProductToBuyForDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findProductById">
+      <wsdl:input name="findProductById" message="tns:findProductById" />
+      <wsdl:output name="findProductByIdResponse" message="tns:findProductByIdResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicesProductSoapBinding" type="tns:ServicesProductPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="findAllAdminProducts2">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findAllAdminProducts2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findAllAdminProducts2Response">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberUpdateProductToBuyForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="MemberUpdateProductToBuyForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MemberUpdateProductToBuyForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteProduct">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteProductResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminUpdateProductToSellForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="AdminUpdateProductToSellForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AdminUpdateProductToSellForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberAddListProductToBuyForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="MemberAddListProductToBuyForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MemberAddListProductToBuyForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllProductsByAdmin">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findAllProductsByAdmin">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findAllProductsByAdminResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminDeleteProd">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="AdminDeleteProd">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AdminDeleteProdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParentChildRemoveProd">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="ParentChildRemoveProd">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ParentChildRemoveProdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminAddListProductToSellForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="AdminAddListProductToSellForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AdminAddListProductToSellForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminAddSingleProductToSellForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="AdminAddSingleProductToSellForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AdminAddSingleProductToSellForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowAllProductsToSellForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="ShowAllProductsToSellForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ShowAllProductsToSellForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminDeleteProductFromSellForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="AdminDeleteProductFromSellForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AdminDeleteProductFromSellForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberDeleteProductFromBuyForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="MemberDeleteProductFromBuyForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MemberDeleteProductFromBuyForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrphanalProductAdminRemove">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="OrphanalProductAdminRemove">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="OrphanalProductAdminRemoveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowAllProductsToBuyForDonationAddedByMember">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="ShowAllProductsToBuyForDonationAddedByMember">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ShowAllProductsToBuyForDonationAddedByMemberResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllAdminProducts">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findAllAdminProducts">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findAllAdminProductsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProduct">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="addProduct">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addProductResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateProduct">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateProductResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeProduct">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="removeProduct">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="removeProductResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllProductsForDotNet">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAllProductsForDotNet">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllProductsForDotNetResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminDeleteRelatedProduct">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="AdminDeleteRelatedProduct">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AdminDeleteRelatedProductResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberAddSingleProductToBuyForDonation">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="MemberAddSingleProductToBuyForDonation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MemberAddSingleProductToBuyForDonationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findProductById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findProductById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findProductByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicesProduct">
+    <wsdl:port name="ServicesProductPort" binding="tns:ServicesProductSoapBinding">
+      <soap:address location="http://localhost:18080/nature-spirit-ejb/ServicesProduct/ServicesProductPortType" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,117 @@
+﻿@model NatureSpiritMVC.Models.MemberNewsModels
+
+@{
+    ViewBag.Title = "EditNewsByMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditNewsByMember</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>MemberNewsModels</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id_Member, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Id_Member, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Id_Member, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id_News, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Id_News, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Id_News, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.date_Of_Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.date_Of_Comment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.date_Of_Comment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+              
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.State_News, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.State_News, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.State_News, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.HiddenFor(model => model.news.title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.news.title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.news.title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       @*<div>
+          @{
+               //Validation.RequireField("companyname", "Company name is required.");
+               //Validation.Add("employees", Validator.Integer());
+
+               if (IsPost)
+               {
+                   var myComment = Request.Form["commentId"];
+
+                   
+                   <text>
+                       You entered: <br />
+                       Your Comment Is: @myComment <br />
+                   </text>
+                   
+               }
+           }
+           
+        <form method="post" action="">
+
+            <input type="text" placeholder="Type Your Comment Here" name="CommentId" id="CommentId" /> *@
+           @* @Html.ValidationMessage("commentId")*@
+            @* @Html.TextBox("commentValue"); *@
+    @*        <label>&nbsp;</label>
+            <input type="button" name="setComment" id="setCommentId" value="Add Comment" class="btn btn-default" onclick="showCommentField()" />
+        </form>
+    </div> 
+    <div>
+        @using (Html.BeginForm("LikeNewsByMember", "MemberNews", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+        <input type="button" name="setComment" id="setComment" value="Like The News" class="btn btn-default" />
+        }
+    </div>
+    *@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<NatureSpiritMVC.Models.NewsModels>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BackOfficeTemplate.cshtml";
+}
+
+<h2>Index</h2> 
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                <div>
+                    Search by News Title  : @Html.TextBox("searchString")    
+                </div>
+            </td>
+            <td> <input type="submit" value="Search" id="submit" class="btn btn-default"/> </td>
+        </tr>
+    </table>
+ 
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" >        
+    <tr>
+        <th>
+            News Title
+        </th>
+        <th>
+            Description News
+        </th>
+        <th>
+            Picture News    
+        </th>
+       @* <th>  
+            @Html.DisplayNameFor(model => model.admin_id_Member)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.topic_idTopic)
+        </th>*@
+        <th>
+            Topic Title 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td> 
+            <div id="userphoto"><img src="~/Content/Uploads/@Html.DisplayFor(modelItem => item.picture)" alt="user image"></div>
+        
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.admin_id_Member)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.topic_idTopic)
+        </td>*@        
+        <td>
+            @Html.DisplayFor(modelItem => item.topic.title)   
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idNews }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idNews }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idNews })
+        </td>
+    </tr>
+}
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

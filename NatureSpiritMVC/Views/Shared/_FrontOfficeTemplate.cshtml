@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @* Index Template Admin Files*@
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Wild Nature Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="@Url.Content("~/Content/FrontOfficeTemplate/")css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("~/Content/FrontOfficeTemplate/")css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+    <script src="@Url.Content("~/Content/FrontOfficeTemplate/")js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- pop-up-box -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/FrontOfficeTemplate/")css/jquery.lightbox.css">
+    <script src="@Url.Content("~/Content/FrontOfficeTemplate/")js/jquery.lightbox.js"></script>
+    <script>
+  // Initiate Lightbox
+  $(function() {
+    $('.news-grid1 a').lightbox();
+  });
+    </script>
+    <!-- //pop-up-box -->
+    <link href='@Url.Content("~/Content/FrontOfficeTemplate/")//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='@Url.Content("~/Content/FrontOfficeTemplate/")//fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+    <link href='@Url.Content("~/Content/FrontOfficeTemplate/")//fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+
+    <!--  Css for table  -->
+ 
+     <style type="text/css">
+
+     th {
+     border: medium solid #000000;
+     font-family: monospace;
+     width: 1%;
+     height: 10%;
+     padding: 5px;
+     background-color: #D0E3FA;
+     }
+     td {
+
+     width: 1%;
+     border: medium solid #000000;
+     height: 10%;
+     }
+     table {
+     border: medium solid #000000;
+     width: auto;
+     height: 50%;
+     background-color:azure;
+     }
+
+     </style> 
+
+    <!--  /. Css for table  -->
+
+</head>
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+            <div class="header-nav">
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="logo">
+                            <a class="navbar-brand" href="index.html">Nature <span>Spirit</span></a>
+                            <div class="leaf">
+                                <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Login !-->   
+                    <!-- Login !-->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav"> 
+                            <li class="active">
+                            @* @Html.ActionLink("Home", "Index", "Home") *@
+                            @Html.ActionLink("Home", "Index", "Product")
+                            </li>
+                            <li>
+                           @* @Html.ActionLink("News", "News", "Home") *@ 
+                           @Html.ActionLink("News", "Index", "MemberNews")  
+                            </li>
+                            <!--<li><a href="news.html">News<p/a></li>!-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Followings<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("My Products", "ProductsMember", "Home")</li>
+                                    <li><a href="events.html">My Events</a></li>
+                                    <li><a href="photographies.html">My Photographies</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Signals<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reclamations.html">My Reclamations</a></li>
+                                    <li><a href="alerts.html">My Alerts</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Sea<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="seaMissions.html">My Sea Missions</a></li>
+                                    <li><a href="seaMissionsAwards.html">My Sea Missions Awards</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="articles.html">My Articles</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="signup.html">SingUp</a></li>
+                                    <li><a href="profile.html">My Profile</a></li>
+                                    <!--<li><a href="logout.html">Logout</a></li>!-->
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

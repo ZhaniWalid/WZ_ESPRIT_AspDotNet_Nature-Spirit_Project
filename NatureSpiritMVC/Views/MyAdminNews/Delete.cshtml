@@ -1,0 +1,87 @@
+﻿@model NatureSpiritMVC.Models.NewsModels
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_BackOfficeTemplate.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Do You Really Want to delete this news ?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       @* <dt>
+            ID News :
+        </dt> *@
+        <dd>
+            @Html.HiddenFor(model => model.idNews)
+        </dd>
+        <dt>
+           Title News :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            Description News :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+           Picture News :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.picture)
+        </dd>
+
+    @*    <dt>
+            @Html.DisplayNameFor(model => model.like)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.like)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+   *@
+     @*   <dt>
+            Id Admin : 
+        </dt> *@
+
+        <dd>
+            @Html.HiddenFor(model => model.admin_id_Member)
+        </dd>
+
+   @*   <dt>
+            Id Topic : 
+        </dt> *@
+
+        <dd>
+            @Html.HiddenFor(model => model.topic_idTopic)
+        </dd>
+     
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

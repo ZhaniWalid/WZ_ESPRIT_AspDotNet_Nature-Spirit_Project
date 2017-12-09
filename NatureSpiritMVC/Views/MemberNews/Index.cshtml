@@ -1,0 +1,83 @@
+﻿@model IEnumerable<NatureSpiritMVC.Models.NewsModels>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Home/News.cshtml";
+}
+
+<h2 style="color:red">Index</h2>                                       
+
+@using (Html.BeginForm())
+{                                                                         
+    <table>
+        <tr>
+            <td>
+                <div style="color:blue">
+                    Search by News Title : @Html.TextBox("searchString") 
+                </div>
+            </td>
+            <td> <input type="submit" value="Search" id="submit" class="btn btn-default" /> </td>
+        </tr>
+    </table>
+
+}
+
+<p>
+    @* @Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table" style="color:black">
+    <tr style="color:deeppink">
+        <th>
+            News Title
+        </th>
+        @*<th>
+                Description News
+            </th> *@
+        <th>
+            Picture News
+        </th>
+        @* <th>
+                @Html.DisplayNameFor(model => model.admin_id_Member)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.topic_idTopic)
+            </th>*@
+        <th>
+            Topic Title
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr style="color:orange">
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        @* <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td> *@
+        <td>
+            @Html.DisplayFor(modelItem => item.picture)
+        </td>
+        @*<td>
+                @Html.DisplayFor(modelItem => item.admin_id_Member)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.topic_idTopic)
+            </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.topic.title)
+        </td>
+        <td style="color:orangered">
+            @Html.ActionLink("Comment/Like Our News", "Create", new { id = item.idNews })
+           @* @Html.ActionLink("Details", "Details", new { id = item.idNews }) *@
+            @*@ @Html.ActionLink("Delete", "Delete", new { id = item.idNews })*@
+        </td>
+    </tr>
+    }
+</table>
+
+<div style="color:orangered">
+    @Html.ActionLink("Back to List", "Index")
+</div>

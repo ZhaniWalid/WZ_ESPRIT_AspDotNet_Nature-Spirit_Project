@@ -1,0 +1,265 @@
+﻿
+@{
+    ViewBag.Title = "Home"; 
+    Layout = "~/Views/Shared/_FrontOfficeTemplate.cshtml";
+}
+
+<!-- banner -->
+<div class="banner">
+    <div class="container">
+        <section class="slider">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="banner-info">
+                            <h1>Nature</h1>
+                            <p>Nature, in the broadest sense, is the natural, physical, or material world or universe. "Nature" can refer to the phenomena of the physical world, and also to life in general. The study of nature is a large part of science. Although humans are part of nature, human activity is often understood as a separate category from other natural phenomena.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-info">
+                            <h1>WildLife</h1>
+                            <p>Wildlife traditionally refers to undomesticated animal species, but has come to include all plants, fungi, and other organisms that grow or live wild in an area without being introduced by humans.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-info">
+                            <h1>Nature Preserve</h1>
+                            <p>A nature reserve (natural reserve, bioreserve, (natural/nature) preserve or (national/nature) conserve) is a protected area of importance for wildlife, flora, fauna or features of geological or other special interest, which is reserved and managed for conservation and to provide special opportunities for study or research.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--FlexSlider-->
+        <link rel="stylesheet" href="@Url.Content("~/Content/FrontOfficeTemplate/")css/flexslider.css" type="text/css" media="screen" />
+        <script defer src="@Url.Content("~/Content/FrontOfficeTemplate/")js/jquery.flexslider.js"></script>
+        <script type="text/javascript">
+				$(window).load(function(){
+				  $('.flexslider').flexslider({
+					animation: "slide",
+					start: function(slider){
+					  $('body').removeClass('loading');
+					}
+				  });
+				});
+        </script>
+        <!--End-slider-script-->
+        <div class="donate">
+            <a href="#">To The Top</a>
+        </div>
+    </div>
+</div>
+<!-- //banner -->
+<!-- banner-bottom -->
+<div class="banner-bottom">
+    <div class="container">
+        <h3>Our Products</h3>
+        <div class="welcome"> 
+           @RenderBody()
+        </div>
+    </div>
+</div>
+<!-- //banner-bottom -->
+<!-- events -->
+<div class="events">
+    <div class="container">
+        <h3>Our Events</h3>
+        <p class="para">
+            Ut aut reiciendis voluptatibus maiores alias
+            consequatur aut perferendis doloribus asperiores repellat incidunt ut labore et dolore magnam aliquam  quod maxime
+            placeat facere possimusquaerat voluptatem
+        </p>
+        <div class="events-grids">
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left1">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left2">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="events-grids">
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left3">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left4">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left5">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="events-grids">
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left6">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left7">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-4 events-grid">
+                <div class="col-xs-3 events-grid-left8">
+                    <span> </span>
+                </div>
+                <div class="col-xs-9 events-grid-right">
+                    <h4>Itaque earum rerum hic tenetur doloribus</h4>
+                    <p>
+                        Ut aut reiciendis voluptatibus maiores alias
+                        consequatur aut perferendis doloribus asperiores repellat.
+                    </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //events -->
+<!-- boostrap-icons -->
+<!-- //boostrap-icons -->
+<!-- news -->
+<div class="news">
+    <div class="container">
+        <h3>The Photography Competition</h3>
+        <div class="news-grids">
+            <div class="col-md-4 news-grid">
+                <div class="news-grid1">
+                    <a class="mask" href="images/4.jpg"><img src="@Url.Content("~/Content/FrontOfficeTemplate/")images/4.jpg" alt=" " class="img-responsive" /></a>
+                </div>
+                <h4>exercitationem ullam corporis</h4>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since...
+                </p>
+            </div>
+            <div class="col-md-4 news-grid">
+                <div class="news-grid1">
+                    <a class="mask" href="images/5.jpg"><img src="@Url.Content("~/Content/FrontOfficeTemplate/")images/5.jpg" alt=" " class="img-responsive" /></a>
+                </div>
+                <h4>suscipit laboriosam tenetur</h4>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since...
+                </p>
+            </div>
+            <div class="col-md-4 news-grid">
+                <div class="news-grid1">
+                    <a class="mask" href="images/6.jpg"><img src="@Url.Content("~/Content/FrontOfficeTemplate/")images/6.jpg" alt=" " class="img-responsive" /></a>
+                </div>
+                <h4>perferendis doloribus asperiores</h4>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since...
+                </p>
+            </div>
+            <div class="clearfix"> </div> 
+        </div>
+        <div class="more all">
+            <a href="#" class="hvr-bounce-to-bottom">Read all news</a>
+        </div>
+    </div>
+</div>
+<!-- //news -->
+<!-- footer -->
+<!--<div class="footer">
+
+</div>!-->
+<div class="copy">
+    <p> Copyright © 2016 Nature Spirit </p>
+</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+<script src="@Url.Content("~/Content/FrontOfficeTemplate/")js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false) 
